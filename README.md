@@ -1,7 +1,12 @@
 # flask-app-ecs
 Simple Flask app to be run on ECS
 
-Some projects put the main Flask app in a file called app.py
+---
+
+### Using `app.py` directly
+Some projects put the main Flask app in a file called **`app.py`**:
+
+```python
 from flask import Flask
 
 app = Flask(__name__)
@@ -12,7 +17,8 @@ def home():
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
----------
+
+Using run.py (or main.py) as entrypoint
 
 Other projects use a run.py (or sometimes main.py) as the entrypoint.
 
@@ -23,6 +29,15 @@ from app import app  # assuming app.py defines "app = Flask(__name__)"
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
 
+
+
+✅ Rule of thumb:
+
 If the project is structured around app.py only → run that.
 
 If there’s a run.py which imports the app and starts it → that’s the file to run.
+
+
+This will render correctly in GitHub with proper headers, code blocks, and formatting.  
+
+Do you want me to also add a **Dockerfile example** section in that README to make it more complete for ECS deployment?
