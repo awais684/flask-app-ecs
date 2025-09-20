@@ -7,7 +7,6 @@ COPY requirements.txt .
 
 RUN apt install -r requirements.txt
 
-ENTRYPOINT ["python", "run.py"]
 #-------------------------------
 # stage-2 base image 400mb
 FROM python:3.7-slim
